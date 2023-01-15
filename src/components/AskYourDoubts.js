@@ -417,7 +417,7 @@ const AskYourDoubts = (props) => {
 
       </div>
 
-      <Chatbot />
+      {/* <Chatbot /> */}
 
       <ToastContainer />
     </div>
