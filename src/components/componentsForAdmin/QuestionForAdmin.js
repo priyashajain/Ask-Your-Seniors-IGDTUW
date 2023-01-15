@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 function QuestionForAdmin(props) {
 
     const handleAdminQuestionsDeleteButton = async () => {
-        let result = await fetch(`http://localhost:5000/delete-question/${props.questionId}`, {
+        let result = await fetch(`https://ask-your-seniors-igdtuw-backend.vercel.app/delete-question/${props.questionId}`, {
             method: "Delete"
         });
 
@@ -12,7 +12,7 @@ function QuestionForAdmin(props) {
     }
 
     const handleAdminQuestionsApproveButton = async () => {
-        let result = await fetch(`http://localhost:5000/update-question-approved/${props.questionId}`, {
+        let result = await fetch(`https://ask-your-seniors-igdtuw-backend.vercel.app/update-question-approved/${props.questionId}`, {
             method: 'Put',
             body: JSON.stringify({ approved: true }),
             headers: {
@@ -22,7 +22,7 @@ function QuestionForAdmin(props) {
         result = await result.json();
 
 
-        let resultNoOfDoubtsAsked = await fetch(`http://localhost:5000/user-increment-noOfDoubtsAsked/${props.userIdSentFromAdmin}`, {                 //this result gets the value of res.send()
+        let resultNoOfDoubtsAsked = await fetch(`https://ask-your-seniors-igdtuw-backend.vercel.app/user-increment-noOfDoubtsAsked/${props.userIdSentFromAdmin}`, {                 //this result gets the value of res.send()
             method: 'Put',
             headers: {
                 'Content-Type': 'application/json'

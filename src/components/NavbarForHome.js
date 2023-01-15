@@ -17,7 +17,7 @@ function NavbarForHome(props) {
 
   const googleAuth = () => {
     window.open(
-      `http://localhost:5000/auth/google/callback`,
+      `https://ask-your-seniors-igdtuw-backend.vercel.app/auth/google/callback`,
       "_self"
     );
   };

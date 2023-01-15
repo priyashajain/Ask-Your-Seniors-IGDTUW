@@ -45,7 +45,7 @@ function CreateQuestion(props) {
 
 
         const id = props.userIdSent;
-        let result = await fetch(`http://localhost:5000/user/${id}`);
+        let result = await fetch(`https://ask-your-seniors-igdtuw-backend.vercel.app/user/${id}`);
         result = await result.json();
         console.log(result);
         // setUser(result);
@@ -100,7 +100,7 @@ function CreateQuestion(props) {
             console.log('object i created', JSON.stringify(user));
 
 
-            let result = await fetch("http://localhost:5000/createquestion", {
+            let result = await fetch("https://ask-your-seniors-igdtuw-backend.vercel.app/createquestion", {
                 method: "post",
                 body: JSON.stringify({ content, category, user, approved, notified }),
                 headers: {

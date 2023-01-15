@@ -10,7 +10,7 @@ function NavbarForAdmin(props) {
     const navigate = useNavigate();
 
     const logout = () => {
-        window.open(`http://localhost:5000/auth/logout`, "_self");
+        window.open(`https://ask-your-seniors-igdtuw-backend.vercel.app/auth/logout`, "_self");
     };
 
     return (

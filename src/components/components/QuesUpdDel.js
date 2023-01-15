@@ -72,7 +72,7 @@ function QuesUpdDel(props) {
 
     const id = props.questionId;
     console.log(id);
-    let result = await fetch(`http://localhost:5000/answers/${id}`);
+    let result = await fetch(`https://ask-your-seniors-igdtuw-backend.vercel.app/answers/${id}`);
     result = await result.json();
 
     setAnswers(result.filter(adminQuestion => adminQuestion.approved === true));
@@ -225,7 +225,7 @@ function QuesUpdDel(props) {
       console.log("Question object I created", question);
 
 
-      let resultAnswer = await fetch("http://localhost:5000/createanswer", {
+      let resultAnswer = await fetch("https://ask-your-seniors-igdtuw-backend.vercel.app/createanswer", {
         method: "post",
         body: JSON.stringify({ content: acontent, user, question, approved, notified }),
         headers: {

@@ -21,7 +21,7 @@ const Details = () => {
     const collectData = async () => {                                   //connecting react to backend 
         
 
-        let result = await fetch(`http://localhost:5000/user/${params.id}`, {                 //this result gets the value of res.send()
+        let result = await fetch(`https://ask-your-seniors-igdtuw-backend.vercel.app/user/${params.id}`, {                 //this result gets the value of res.send()
             method: 'Put',
             body: JSON.stringify({ fName, lName, branch, year, noOfDoubtsAsked, noOfDoubtsAnswered, isAdmin }),
             headers: {

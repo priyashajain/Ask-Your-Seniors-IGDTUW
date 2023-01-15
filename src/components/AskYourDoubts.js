@@ -45,7 +45,7 @@ const AskYourDoubts = (props) => {
     toast.success(`Your question - "${questionContent}" - was approved`, {
       onClose: async () => {
         console.log("closing");
-        let result = await fetch(`http://localhost:5000/update-question-approved/${questionId}`, {
+        let result = await fetch(`https://ask-your-seniors-igdtuw-backend.vercel.app/update-question-approved/${questionId}`, {
           method: 'Put',
           body: JSON.stringify({ notified: true }),
           headers: {
@@ -62,7 +62,7 @@ const AskYourDoubts = (props) => {
     toast.success(`Your answer - "${questionContent}" - was approved`, {
       onClose: async () => {
         console.log("closing");
-        let result = await fetch(`http://localhost:5000/update-answer-approved/${questionId}`, {
+        let result = await fetch(`https://ask-your-seniors-igdtuw-backend.vercel.app/update-answer-approved/${questionId}`, {
           method: 'Put',
           body: JSON.stringify({ notified: true }),
           headers: {
@@ -121,7 +121,7 @@ const AskYourDoubts = (props) => {
 
 
   const addQuestion = async () => {
-    let result = await fetch(`http://localhost:5000/questions`);
+    let result = await fetch(`https://ask-your-seniors-igdtuw-backend.vercel.app/questions`);
     result = await result.json();
     // console.log(result);
     setnQuestions(result.filter(adminQuestion => adminQuestion.approved === true));
@@ -131,7 +131,7 @@ const AskYourDoubts = (props) => {
 
 
     const useridForMyQuestions = props.userId;
-    let resultMyQuestions = await fetch(`http://localhost:5000/questions-from-user-id/${useridForMyQuestions}`);
+    let resultMyQuestions = await fetch(`https://ask-your-seniors-igdtuw-backend.vercel.app/questions-from-user-id/${useridForMyQuestions}`);
     resultMyQuestions = await resultMyQuestions.json();
     // console.log(result);
 
@@ -148,7 +148,7 @@ const AskYourDoubts = (props) => {
 
 
     const useridForMyAnswers = props.userId;
-    let resultMyAnswers = await fetch(`http://localhost:5000/answers-from-user-id/${useridForMyAnswers}`);
+    let resultMyAnswers = await fetch(`https://ask-your-seniors-igdtuw-backend.vercel.app/answers-from-user-id/${useridForMyAnswers}`);
     resultMyAnswers = await resultMyAnswers.json();
     // console.log(result);
 
@@ -162,7 +162,7 @@ const AskYourDoubts = (props) => {
 
     const idFetched = props.userId;
 
-    let result = await fetch(`http://localhost:5000/user/${idFetched}`);
+    let result = await fetch(`https://ask-your-seniors-igdtuw-backend.vercel.app/user/${idFetched}`);
     result = await result.json();
     setNavbarName(`${result.fName} ${result.lName}`);
 

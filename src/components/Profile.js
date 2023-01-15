@@ -37,7 +37,7 @@ const Profile = (props) => {
 
     
     // const getUserDetails = async () => {
-    //     let userDetails = await fetch(`http://localhost:5000/user/${params.id}`);
+    //     let userDetails = await fetch(`https://ask-your-seniors-igdtuw-backend.vercel.app/user/${params.id}`);
     //     userDetails = await userDetails.json();
     
     //     setfName(result.fName);
@@ -53,7 +53,7 @@ const Profile = (props) => {
     // }
 
     const updateProfile = async () => {                                   
-        let result = await fetch(`http://localhost:5000/user/${params.id}`, {                 
+        let result = await fetch(`https://ask-your-seniors-igdtuw-backend.vercel.app/user/${params.id}`, {                 
             method: 'Put',
             body: JSON.stringify({ fName, lName, branch, year }),
             headers: {
